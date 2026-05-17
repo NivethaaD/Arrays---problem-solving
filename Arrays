@@ -23,5 +23,24 @@ class Solution:
                 secondMaxi = arr[i]
         return secondMaxi
             
-3.
+3.Check if Array Is Sorted and Rotated
+
+class Solution:
+    def check(self, nums: List[int]) -> bool:
+        temp = nums.copy()
+        temp.sort()
+        n = len(nums)
+        breakPoint = -1
+        for i in range(0,n):
+            if nums[i] < nums[i-1]:
+                breakPoint = i
+        
+        nums[:breakPoint] = nums[:breakPoint][::-1]
+        nums[breakPoint:] = nums[breakPoint:][::-1]
+        nums.reverse()
+
+        if nums == temp:
+            return True
+        return False
+
         
