@@ -1,0 +1,10 @@
+1.Largest in Array
+
+class Solution:
+    def largest(self, arr):
+        larg = 0
+        for val in arr:
+            if  val > larg:
+                larg = val
+        return larg
+        
