@@ -81,4 +81,15 @@ class Solution:
             arr[i]=val
             val = cur
         arr[0] = temp
-            
+
+7.Rotate Array
+
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
+        n = len(nums)
+        k = k%n
+        nums[:] = nums[::-1]
+        nums[:k] = nums[:k][::-1]
+        nums[k:] = nums[k:][::-1]
+    
+        
