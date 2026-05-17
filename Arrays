@@ -1,4 +1,4 @@
-1.Largest in Array
+1.Largest in Array - Easy
 
 class Solution:
     def largest(self, arr):
@@ -7,4 +7,21 @@ class Solution:
             if  val > larg:
                 larg = val
         return larg
+
+2.Second Largest - Easy
+
+class Solution:
+    def getSecondLargest(self, arr):
+        # Code Here
+        
+        maxi = max(arr)
+        n = len(arr)
+        lessDiff = maxi
+        secondMaxi = -1
+        for i in range(0,n):
+            if arr[i] > secondMaxi and arr[i]!=maxi:
+                secondMaxi = arr[i]
+        return secondMaxi
+            
+3.
         
