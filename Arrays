@@ -168,3 +168,19 @@ class Solution:
 
         return MaxCount
 
+13.Single Number
+
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        """
+        Important intuition
+        XOR acts like a “pair remover”.
+        Every duplicate number disappears:
+        a⊕a=0
+        Only the single number remains.
+        """
+        
+        result = 0
+        for ele in nums:
+            result = result^ele
+        return result
