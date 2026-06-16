@@ -184,3 +184,25 @@ class Solution:
         for ele in nums:
             result = result^ele
         return result
+
+14. Longest Subarray with Sum K
+
+class Solution:
+    def longestSubarray(self, arr, k):  
+        sum = 0
+        d = {}
+        ans = 0
+        for i in range(0,len(arr)):
+            sum = sum+arr[i]
+            
+            if sum == k:
+                ans = i+1
+            
+            if (sum-k) in d:
+                ans = max(ans,i-d[sum-k])
+            
+            if sum not in d:
+                d[sum]=i
+        
+        return ans
+    
