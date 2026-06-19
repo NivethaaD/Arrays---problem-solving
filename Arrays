@@ -206,3 +206,10 @@ class Solution:
         
         return ans
     
+15. Check if a String in a list is Alphanumeric
+
+arr = ["Nive1223","76pav##i", "ka((vi","la_56x", "r@avi"]
+
+for ele in arr:
+    if ele.isalnum():
+        print(ele)
