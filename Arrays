@@ -260,7 +260,7 @@ class Solution:
                 count = count-1
         return ele
 
-19. Maximum Subarray (Kadane's Algorithm)
+19. Maximum Subarray (Kadane's Algorithm):
 
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
