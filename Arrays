@@ -285,3 +285,21 @@ class Solution:
             max_profit = max(max_profit, price-min_price)
 
         return max_profit
+
+21. Rearrange Array Elements by Sign
+
+class Solution:
+    def rearrangeArray(self, nums: List[int]) -> List[int]:
+        i = 0
+        j = 1
+        n = len(nums)
+        ans = [0]*n
+        for ele in nums:
+            if ele > 0:
+                ans[i] = ele
+                i = i + 2
+            else:
+                ans[j] = ele
+                j = j + 2
+        return ans
+
