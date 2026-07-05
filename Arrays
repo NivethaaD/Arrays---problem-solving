@@ -325,3 +325,26 @@ class Solution:
         
         return ans
     
+23. Longest Consecutive Sequence
+
+class Solution:
+    def longestConsecutive(self, nums: List[int]) -> int:
+        temp = set(nums)
+        maxiLength = 0
+
+        for ele in temp:
+            count = 1
+            if ele-1 in temp:
+                continue
+
+            num = ele
+            while True:
+                if num+1 in temp:
+                    count = count+1
+                    num = num + 1
+                else:
+                    break
+                    
+            maxiLength = max(maxiLength, count)
+        return maxiLength
+            
