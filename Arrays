@@ -348,3 +348,21 @@ class Solution:
             maxiLength = max(maxiLength, count)
         return maxiLength
             
+24. Set Matrix Zeroes
+
+class Solution:
+    def setZeroes(self, matrix: List[List[int]]) -> None:
+        l = list()
+        n = len(matrix)
+        m = len(matrix[0])
+        for i in range(0,n):
+            for j in range(0,m):
+                if matrix[i][j]==0:
+                    l.append([i,j])
+        
+        for i in range(0,len(l)):
+            matrix[l[i][0]] = [0]*m
+            for r in range(0,n):
+                matrix[r][l[i][1]] = 0
+        
+        
