@@ -416,3 +416,21 @@ class Solution:
             
             left = left + 1
         return l
+
+27. Permutations
+
+class Solution:
+    def findPermutation(self, start, nums, res):
+        if start == len(nums):
+            res.append(nums[:])
+            return
+
+        for i in range(start, len(nums)):
+            nums[start],nums[i] = nums[i],nums[start]
+            self.findPermutation(start+1, nums, res)
+            nums[start],nums[i] = nums[i],nums[start]
+    
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        res = list()
+        self.findPermutation(0, nums, res)
+        return res
