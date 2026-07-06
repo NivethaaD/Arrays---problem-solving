@@ -468,3 +468,21 @@ class Solution:
         #step: 3
         nums[breakPoint+1:]=nums[breakPoint+1:][::-1]
         
+29. Subarray Sum Equals K
+
+class Solution:
+    def subarraySum(self, nums: List[int], k: int) -> int:
+        n = len(nums)
+        d = dict()
+        d = {0:1}
+        sum = 0
+        count = 0
+
+        for i in range(0,n):
+            sum = sum + nums[i]
+            
+            if (sum - k) in d:
+                count = count + d[sum-k]
+            
+            d[sum] = d.get(sum, 0)+1
+        return count
