@@ -506,3 +506,24 @@ class Solution:
                 ans.append(row)
 
         return ans
+
+32. 3Sum - Better Solution(a+b+c=0, c = -(b+c))
+
+class Solution:
+    def threeSum(self, nums: list[int]) -> list[list[int]]:
+        n = len(nums)
+        ans = []
+        m = {}
+
+        for i in range(n):
+            m = {}
+            for j in range(i + 1, n):
+                k =  -(nums[i]+nums[j])
+                if k in m:
+                    triplet = sorted([nums[i],nums[j],k])
+                    if triplet and (triplet not in ans):
+                        ans.append(triplet)
+                else:
+                    m[nums[j]]=1
+
+        return ans
