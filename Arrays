@@ -591,3 +591,20 @@ class Solution:
                             l = l - 1
         return ans
 
+35. Largest subarray with 0 sum - (Prefix sum)
+
+class Solution:
+    def maxLength(self, arr):
+	    n = len(arr)
+        maxi = 0
+        sum = 0
+        mp={}
+        for i in range(0,n):
+    	    sum = sum+arr[i]
+    	    if sum == 0:
+    	       maxi = i+1
+    	    if sum in mp:
+    	       maxi = max(maxi, i-mp[sum])
+    	    else:
+    	       mp[sum] = i
+    	return maxi
