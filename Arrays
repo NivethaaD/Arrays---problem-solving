@@ -632,3 +632,27 @@ class Solution:
             ans.append([start, end])
         return ans
 
+37. Merge Sorted Array
+
+class Solution:
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+        i = m-1
+        j = 0
+        
+        while i>=0 and j<n:
+            if nums1[i] > nums2[j]:
+                nums1[i],nums2[j] = nums2[j],nums1[i]
+            else:
+                break
+            i = i - 1
+            j = j + 1
+        
+        nums1[:m] = sorted(nums1[:m])
+        nums2.sort()
+
+        for ele in nums2:
+            nums1[m]=ele
+            m = m + 1
+        
+
+        
